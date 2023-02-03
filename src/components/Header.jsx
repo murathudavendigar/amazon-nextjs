@@ -13,14 +13,14 @@ const Header = () => {
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            alt="amazon-logo"
             width={150}
             height={40}
-            style={{ objectFit: "contain" }}
-            className="cursor-pointer "
+            className="cursor-pointer object-contain"
           />
         </div>
         {/* Search Box */}
-        <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500">
+        <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500 mx-2">
           <input
             type="search"
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
@@ -51,11 +51,20 @@ const Header = () => {
         </div>
       </div>
       {/* Bottom Navbar */}
-      <div>
-        <p>
+      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+        <p className="link flex items-center">
           <MenuIcon className="h-6 mr-1" />
           All
         </p>
+        <p className="link">Prime Video</p>
+        <p className="link">Amazon Business</p>
+        <p className="link">Today's Deals</p>
+        <p className="link hidden lg:inline-flex">Electronics</p>
+        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Prime</p>
+        <p className="link hidden lg:inline-flex">Buy Again</p>
+        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
       </div>
     </header>
   );
