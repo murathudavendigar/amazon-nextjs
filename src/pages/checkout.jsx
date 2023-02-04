@@ -10,6 +10,8 @@ const Checkout = () => {
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
+  const createCheckoutSession = () => {};
+
   return (
     <div className="bg-gray-50">
       <Header />
@@ -55,11 +57,13 @@ const Checkout = () => {
                 <span className="font-bold">$ {total.toFixed(2)}</span>
               </h2>
               <button
+                role="link"
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
                   "from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed"
-                }`}>
+                }`}
+                onClick={createCheckoutSession}>
                 {!session ? "Sign in to checkout" : "Proceed to checkout"}
               </button>
             </>
