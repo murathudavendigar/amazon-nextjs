@@ -15,8 +15,10 @@ const Product = ({ id, title, price, description, category, image }) => {
       title,
       price,
       description,
+      rating,
       category,
       image,
+      hasPrime,
     };
     dispatch(addToBasket(product));
   };
