@@ -1,16 +1,37 @@
 import CheckoutProduct from "@/components/CheckoutProduct";
 import Header from "@/components/Header";
 import { selectTotal } from "@/slices/basketSlice";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 const Checkout = () => {
   const items = useSelector((state) => state.basket.items);
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
-  const createCheckoutSession = () => {};
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    //* Call the backend to create a checkout session...
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
+
+    //* Redirect costumer to Stripe Checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    }
+  };
 
   return (
     <div className="bg-gray-50">
