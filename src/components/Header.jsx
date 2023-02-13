@@ -21,7 +21,8 @@ const Header = () => {
           onClick={() => router.push("/")}
           className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            // src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            src="https://cutewallpaper.org/24/amazon-png-logo/amazon-619e3-logo-e2b8d-png-ac335-images-2fd02-free-fc32c-download.png"
             alt="amazon-logo"
             width={150}
             height={40}
