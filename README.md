@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project : Amazon Clone App
 
-## Getting Started
+Fully responsive Amazon Clone Application made using Next.js. It is a web application where a real payment system is created using Stripe checkout, the relevant orders are registered to the firestore database using webhooks, and Redux is used as global state management.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- [Project : Amazon Clone App](#project--amazon-clone-app)
+  - [Table of contents](#table-of-contents)
+  - [The challenge](#the-challenge)
+  - [Project Skeleton](#project-skeleton)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+    - [Built with](#built-with)
+    - [Useful resources](#useful-resources)
+  - [Installation](#installation)
+  - [Author](#author)
+  - [Contact](#contact)
+  - [How to use](#how-to-use)
+
+## The challenge
+
+To create an clone site with ReactJS, NextJS, Redux, Webhooks, Stripe Checkout, NextAuth, Firestore and TailwindCSS
+
+## Project Skeleton
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+|----README.md
+├── lib
+│       └── index.js
+├── public
+│       ├── favicon.ico
+│       └── vercel.svg
+├── src
+│       ├── app
+│       │       └── store.js
+│       ├── components
+│       │       ├── Banner.jsx
+│       │       ├── CheckoutProduct.jsx
+│       │       ├── Header.tsx
+│       │       ├── Order.jsx
+│       │       ├── Product.jsx
+│       │       └── ProductFeed.jsx
+│       ├── pages
+│       │       ├── api
+│       |       |     ├── auth
+│       |       |     |      └── [...nextauth].js
+│       |       |     ├── create-checkout-session.js
+│       |       |     └── webhooks.js
+│       │       ├── _app.js
+│       │       ├── checkout.jsx
+│       │       ├── index.js
+│       │       ├── orders.jsx
+│       │       └── success.jsx
+│       ├── slices
+│       │       └──  basketSlice.ts
+│       └── styles
+│               └── global.css
+├── next.config.js
+├── .env
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── permission.json
+├── postcss.config.js
+└── tailwind.config.js
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Screenshot
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<p align="center">
+<a href="https://amazon-nextjs-hazel.vercel.app/"><img src="" alt="screenshot"></a>
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Links
 
-## Learn More
+<hr>
+<b>Check The Live Website ➡️</b> <a href="https://amazon-nextjs-hazel.vercel.app/">Live Website</a>
+<hr>
 
-To learn more about Next.js, take a look at the following resources:
+### Built with
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js
+- React Components, Props, States and Hooks
+- Redux
+- Webhooks
+- Stripe Checkout
+- API GET requests
+- JSX Elements
+- TailwindCSS
+- NextAuth
+- Firestore Database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Useful resources
 
-## Deploy on Vercel
+- [W3 Schools](https://www.w3schools.com/)
+- [MDN](https://developer.mozilla.org/en-US/)
+- [Firebase](https://firebase.google.com/)
+- [Stripe](https://stripe.com/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Use the Npm package manager install command.
+
+```bash
+npm install
+```
+
+---
+
+## Author
+
+- Author - [Murat Hüdavendigâr]
+
+## Contact
+
+<p align="center">
+<a href="https://codepen.io/m_hudavendigar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="m_hudavendigar" height="30" width="40" /></a>
+<a href="https://twitter.com/murathoncu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="murathoncu" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/murathudavendigaroncu/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="murat-hüdavendigâr-öncü-232749246" height="30" width="40" /></a>
+<a href="https://instagram.com/m_hdavendigr" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="m_hdavendigr" height="30" width="40" /></a>
+  <a href="https://medium.com/@murathoncu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@murathoncu" height="30" width="40" /></a>
+</p>
+
+## How to use
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+
+```bash
+npx create-next-app --example with-tailwindcss with-tailwindcss-app
+```
+
+```bash
+yarn create next-app --example with-tailwindcss with-tailwindcss-app
+```
+
+```bash
+pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+```
