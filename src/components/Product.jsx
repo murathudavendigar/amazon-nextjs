@@ -1,13 +1,18 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
 
 const Product = ({ id, title, price, description, category, image }) => {
-  const [rating] = useState(Math.ceil(Math.random() * 5));
-  const [hasPrime] = useState(Math.random() < 0.5);
+  const [rating, setRating] = useState(1);
+  const [hasPrime, setHasPrime] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setRating(Math.ceil(Math.random() * 5));
+    setHasPrime(Math.random() < 0.5);
+  }, []);
 
   const addItemToBasket = () => {
     const product = {
@@ -56,7 +61,7 @@ const Product = ({ id, title, price, description, category, image }) => {
           <img
             className="w-12"
             src="https://whitebox.com/wp-content/uploads/2020/05/Prime-tag-.png"
-            alt=""
+            alt="prime"
           />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>

@@ -46,6 +46,7 @@ const Checkout = () => {
             height={250}
             className="object-contain"
             loading="lazy"
+            alt="banner"
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
             <h1 className="text-3xl border-b pb-4">

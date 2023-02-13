@@ -16,6 +16,7 @@ const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulfillOrder = async (session) => {
   console.log("Fulfilling order", session);
+  console.log(session);
 
   return app
     .firestore()
@@ -25,7 +26,7 @@ const fulfillOrder = async (session) => {
     .doc(session.id)
     .set({
       amount: session.amount_total / 100,
-      //   amount_shipping: session.total_details.amount_shipping / 100,
+      amount_shipping: session.total_details.amount_shipping / 100,
       images: JSON.parse(session.metadata.images),
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     })
@@ -38,7 +39,7 @@ export default async (req, res) => {
   if (req.method === "POST") {
     const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
-    const sig = req.headers("stripe-signature");
+    const sig = req.headers["stripe-signature"];
 
     let event;
 

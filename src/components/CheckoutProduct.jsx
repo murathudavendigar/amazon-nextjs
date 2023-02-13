@@ -40,6 +40,7 @@ const CheckoutProduct = ({
         height={200}
         width={200}
         style={{ objectFit: "contain" }}
+        alt={title}
       />
       <div className="col-span-3 mx-5">
         <p>{title}</p>
@@ -61,7 +62,7 @@ const CheckoutProduct = ({
               className="w-12"
               loading="lazy"
               src="https://whitebox.com/wp-content/uploads/2020/05/Prime-tag-.png"
-              alt=""
+              alt="prime"
             />
             <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
           </div>

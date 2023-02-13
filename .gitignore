@@ -34,3 +34,5 @@ yarn-error.log*
 
 # starter
 /starter_files
+stripe.exe
+example_card_info.md

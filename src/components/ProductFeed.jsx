@@ -21,7 +21,7 @@ const ProductFeed = ({ products }) => {
       <img
         className="md:col-span-full"
         src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/apparel/Events/Cashback/HalfPricePC._CB483831026_.png"
-        alt=""
+        alt="ad"
       />
       <div className="md:col-span-2">
         {products
