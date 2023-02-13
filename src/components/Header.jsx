@@ -17,9 +17,10 @@ const Header = () => {
     <header className="sticky top-0 z-50">
       {/* Top Navbar */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <div
+          onClick={() => router.push("/")}
+          className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            onClick={() => router.push("/")}
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             alt="amazon-logo"
             width={150}
@@ -45,7 +46,9 @@ const Header = () => {
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
 
-          <div className="link">
+          <div
+            onClick={() => session && router.push("/orders")}
+            className="link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>

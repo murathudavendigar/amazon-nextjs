@@ -19,9 +19,19 @@ const Orders = ({ orders }) => {
           <h2>Please sing in to see your orders</h2>
         )}
         <div className="mt-5 space-y-4">
-          {orders?.map((order) => (
-            <Order />
-          ))}
+          {orders?.map(
+            ({ id, amount, amountShipping, items, timestamp, images }) => (
+              <Order
+                key={id}
+                id={id}
+                amount={amount}
+                amountShipping={amountShipping}
+                items={items}
+                timestamp={timestamp}
+                images={images}
+              />
+            )
+          )}
         </div>
       </main>
     </div>
@@ -57,7 +67,7 @@ export async function getServerSideProps(context) {
       amount: order.data().amount,
       amountShipping: order.data().amount_shipping,
       images: order.data().images,
-      timeStamp: moment(order.data().timestamp.toDate()).unix(),
+      timestamp: moment(order.data().timestamp.toDate()).unix(),
       items: (
         await stripe.checkout.sessions.listLineItems(order.id, {
           limit: 100,
