@@ -1,11 +1,16 @@
 import Header from "@/components/Header";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 const Success = () => {
   const router = useRouter();
   return (
     <div className="bg-gray-100 h-screen">
+      <Head>
+        <title>Success | Captain Price</title>
+      </Head>
+
       <Header />
 
       <main className="max-w-screen-lg mx-auto">

@@ -4,6 +4,7 @@ import { selectTotal } from "@/slices/basketSlice";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import Head from "next/head";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
@@ -35,6 +36,10 @@ const Checkout = () => {
 
   return (
     <div className="bg-gray-50">
+      <Head>
+        <title>Checkout | Captain Price</title>
+      </Head>
+
       <Header />
 
       <main className="lg:flex max-w-screen-2xl mx-auto">

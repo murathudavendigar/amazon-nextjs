@@ -3,11 +3,16 @@ import db from "lib";
 import { getSession, useSession } from "next-auth/react";
 import moment from "moment";
 import Order from "@/components/Order";
+import Head from "next/head";
 
 const Orders = ({ orders }) => {
   const { data: session } = useSession();
   return (
     <div>
+      <Head>
+        <title>Orders | Captain Price</title>
+      </Head>
+
       <Header />
       <main className="max-w-screen-lg mx-auto p-10">
         <h1 className="text-3xl border-b mb-2 pb-1 border-yellow-400">
